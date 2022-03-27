@@ -109,6 +109,10 @@ const ShowProfiles = () => {
     "0x79b1b1ffb3c6d1d107b06967e167e2e1de63d931",
     "0x7b1c1702a09521b4160f79f853b7f54ba6b35a59",
     "0x905040585A59C5B0E83Be2b247fC15a81FF4E533",
+    "0xDd582557c1f9c65650c65B18a76C02aa297Dff59",
+    "0xe430b68916717ebc7f824ccb59ea8b87e3a4b34e",
+    "0x17f5ac89ad0940EeD866566BFb98F1f52b6d4De7",
+    "0x5007b3806d8D69CA86BB5E8DcB51F039A553F764",
   ];
 
   const getProfiles = async (params) => {
@@ -226,7 +230,7 @@ const ShowProfiles = () => {
 
   return (
     <div className="bg-gradient-to-r  from-[#fd297b] via-[#ff5864] to-[#ff655b] h-full justify-center ">
-      <h1 className="intro">Discover your Poap Fren</h1>
+      <h1 className="intro">Discover your Poap Frenz</h1>
       {showProfile ? (
         recommProfilePOAP.map((profilepoap) => (
           <TinderCard

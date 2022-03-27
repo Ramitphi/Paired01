@@ -51,15 +51,15 @@ const Followers = () => {
           userfollowers.map((follower) => (
             <div
               key={follower.wallet.defaultProfile.id}
-              className="card w-fit border-white border rounded-full shadow-xl items-center "
+              className="card w-1/2 bg-white border-white border rounded-full shadow-xl items-center "
             >
               {/* <div class="card-body flex flex-row justify-between"> */}
               <div className="flex items-center flex-col">
-                <h2 class="card-title text-white text-base ">
+                <h2 class="card-title text-black text-base ">
                   {" "}
                   {follower.wallet.defaultProfile.handle}
                 </h2>
-                <p className="justify-item-end text-white text-base">
+                <p className="justify-item-end text-black text-base">
                   {follower.wallet.defaultProfile.id}
                 </p>
               </div>
@@ -68,7 +68,7 @@ const Followers = () => {
                 onClick={async () => {
                   await follow(follower.wallet.defaultProfile.id);
                 }}
-                class="btn btn-primary w-1/2 m-2 hover:bg-red-300 text-white badge badge-outline border border-white text-xs"
+                class="btn btn-primary w-[9/10] m-2 hover:bg-red-300 text-black  badge badge-outline border border-slate-300 hover:border-red-400 text-xs"
               >
                 Follow Back
               </button>
