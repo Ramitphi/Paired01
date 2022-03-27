@@ -27,24 +27,21 @@ function App() {
       ) : (
         <Router>
           <div className="flex sticky top-0 z-10 ml-44  items-center max-w-screen justify-center  ">
-            {hasProfile && (
-              <Link
-                to="/profile"
-                className="btn hover:text-white hover:bg-red-300 text-black bg-white  w-1/5"
-              >
-                {" "}
-                My Profile{" "}
-              </Link>
-            )}
-            {!hasProfile && (
-              <Link
-                to="/create"
-                className="btn hover:text-white hover:bg-red-300 text-black bg-white  w-1/5"
-              >
-                {" "}
-                Create Profile{" "}
-              </Link>
-            )}
+            <Link
+              to="/create"
+              className="btn hover:text-white hover:bg-red-300 text-black bg-white  w-1/5"
+            >
+              {" "}
+              Create Profile{" "}
+            </Link>
+            <Link
+              to="/profile"
+              className="btn hover:text-white hover:bg-red-300 text-black bg-white  w-1/5"
+            >
+              {" "}
+              My Profile{" "}
+            </Link>
+
             <Link
               to="/show"
               className="btn hover:text-white hover:bg-red-300 text-black bg-white w-1/5"
