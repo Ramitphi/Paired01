@@ -17,7 +17,7 @@ const Followers = () => {
       const profileId = profiles.items[0].id;
       console.log("followers", profileId);
 
-      const { followers } = await getFollowers(profileId);
+      const { followers } = await getFollowers("0x01a0");
       const { following } = await getFollowing();
 
       const userFollowers = followers.items;

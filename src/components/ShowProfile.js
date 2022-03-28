@@ -74,7 +74,6 @@ const ShowProfiles = () => {
     "0x291d73e4cd05d4342dab8fe9dfe3dc5c285db7b0",
     "0x2b59fd03d176afc335fa6d4fbcdf5cf48a6844fb",
     "0x2f11bdcc9136e1902c5824dada8195d33dd4822b",
-    "0x2fd5c1659a82e87217df254f3d4b71a22ae3ee3",
     "0x2fe5b3e5e1e72a6aafac440ee6a3a0db63fd8391",
     "0x30b0eae5e9df8a1c95dfdb7af86aa4e7f3b51f13",
     "0x39d637737cc76c5849a52c7d3b872a1eb22aa71c",
