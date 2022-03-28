@@ -16,7 +16,7 @@ const Matches = () => {
       const profileId = profiles.items[0].id;
       setUserProfileId(profileId);
 
-      const { followers } = await getFollowers("0x01a0");
+      const { followers } = await getFollowers(profileId);
       console.log("matches", profileId);
 
       const { following } = await getFollowing();
