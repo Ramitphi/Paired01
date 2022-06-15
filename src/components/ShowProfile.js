@@ -124,10 +124,10 @@ const ShowProfiles = () => {
     // console.log("in profile", items);
 
     const profile = {
-      id: items[0].id,
-      handle: items[0].handle,
-      followers: items[0].stats.totalFollowers,
-      following: items[0].stats.totalFollowing,
+      id: items[0]?.id,
+      handle: items[0]?.handle,
+      followers: items[0]?.stats?.totalFollowers,
+      following: items[0]?.stats?.totalFollowing,
     };
 
     return { address: params.address, profile };

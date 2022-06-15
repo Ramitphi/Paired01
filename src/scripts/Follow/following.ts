@@ -5,14 +5,11 @@ import { getAddress } from "../ethers-service";
 const GET_FOLLOWING = `
   query($request: FollowingRequest!) {
     following(request: $request) { 
-			    items {
-            profile {
+                items {
+           profile {
               id
               name
               bio
-              location
-              website
-              twitterUrl
               handle
               picture {
                 ... on NftImage {
@@ -71,7 +68,7 @@ const GET_FOLLOWING = `
                 }
               }
               ownedBy
-              depatcher {
+              dispatcher {
                 address
                 canUseRelay
               }
@@ -97,17 +94,22 @@ const GET_FOLLOWING = `
                     value
                   }
                   recipient
-                }
+               }
+                             ... on ProfileFollowModuleSettings {
+                 type
+               }
+               ... on RevertFollowModuleSettings {
+                 type
+               }
             }
           }
-          totalAmountOfTimesFollowing
         }
        pageInfo {
           prev
           next
           totalCount
        }
-		}
+        }
   }
 `;
 

@@ -2,7 +2,6 @@ import { gql } from "@apollo/client/core";
 import { apolloClient } from "../apollo-client";
 
 import { getAddress } from "../ethers-service";
-
 const GET_PROFILES = `
   query($request: ProfileQueryRequest!) {
     profiles(request: $request) {
@@ -10,9 +9,14 @@ const GET_PROFILES = `
         id
         name
         bio
-        location
-        website
-        twitterUrl
+        attributes {
+          displayType
+          traitType
+          key
+          value
+        }
+        metadata
+        isDefault
         picture {
           ... on NftImage {
             contractAddress
@@ -45,7 +49,7 @@ const GET_PROFILES = `
           __typename
         }
         ownedBy
-        depatcher {
+        dispatcher {
           address
           canUseRelay
         }
@@ -72,7 +76,12 @@ const GET_PROFILES = `
             }
             recipient
           }
-          __typename
+          ... on ProfileFollowModuleSettings {
+           type
+          }
+          ... on RevertFollowModuleSettings {
+           type
+          }
         }
       }
       pageInfo {

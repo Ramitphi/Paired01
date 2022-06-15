@@ -1,20 +1,16 @@
 import { gql } from "@apollo/client";
 
 import { apolloClient } from "../apollo-client-auth";
-
 const GET_FOLLOWERS = `
   query($request: FollowersRequest!) {
     followers(request: $request) { 
-	   items {
+             items {
         wallet {
           address
           defaultProfile {
             id
             name
             bio
-            location
-            website
-            twitterUrl
             handle
             picture {
               ... on NftImage {
@@ -45,7 +41,7 @@ const GET_FOLLOWERS = `
               }
             }
             ownedBy
-            depatcher {
+            dispatcher {
               address
               canUseRelay
             }
@@ -73,8 +69,15 @@ const GET_FOLLOWERS = `
                 }
                 recipient
               }
+              ... on ProfileFollowModuleSettings {
+               type
+              }
+              ... on RevertFollowModuleSettings {
+               type
+              }
             }
           }
+
         }
         totalAmountOfTimesFollowed
       }
@@ -83,10 +86,9 @@ const GET_FOLLOWERS = `
         next
         totalCount
       }
-    }
+        }
   }
 `;
-
 const followersRequest = (profileId: string) => {
   return apolloClient.query({
     query: gql(GET_FOLLOWERS),
